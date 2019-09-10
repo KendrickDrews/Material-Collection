@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Mineral } from './mineral';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/RX';
+import { map} from "rxjs/operators";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -26,10 +27,20 @@ export class ApiService {
   }
   
   // API: GET /minerals
-  public getAllMinerals(): Observable<Mineral[]> {
+  // public getAllMinerals(): Observable<Mineral[]> {
+  //   return this.http
+  //     .get(API_URL + _ROCK_COLLECTION, httpOptions)
+  //     .map(response => {
+  //       const minerals = response;     
+  //       return minerals.map(mineral => new Mineral(mineral));
+  //     })
+  //     .catch(this.handleError);
+  // }
+   // API: GET /minerals
+   public getAllMinerals(): Observable<Mineral[]> {
     return this.http
       .get(API_URL + _ROCK_COLLECTION, httpOptions)
-      .map(response => {
+      .map((response: Response[]) => {
         const minerals = response.map(mineral => new Mineral(mineral));     
         return minerals;
       })

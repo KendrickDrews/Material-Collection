@@ -10,7 +10,7 @@ export class MineralListItemComponent {
 
   
   @Input() 
-  mineral: Mineral[];
+  mineral: Mineral;
   
 
   @Output()

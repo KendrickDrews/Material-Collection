@@ -14,14 +14,7 @@ export class MineralListComponent {
   @Output()
   remove: EventEmitter<Mineral> = new EventEmitter();
 
-  @Output()
-  toggleComplete: EventEmitter<Mineral> = new EventEmitter();
-
   constructor() {
-  }
-
-  onToggleMineralComplete(mineral: Mineral) {
-    this.toggleComplete.emit(mineral);
   }
 
   onRemoveMineral(mineral: Mineral) {
