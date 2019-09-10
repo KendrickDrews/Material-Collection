@@ -1,19 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MineralListFooterComponent } from './mineral-list-footer.component';
 
-describe('MineralListFooterComponent', () => {
-  let component: MineralListFooterComponent;
-  let fixture: ComponentFixture<MineralListFooterComponent>;
+import { MineralFormInputComponent } from './mineral-form-input.component';
+
+describe('MineralFormInputComponent', () => {
+  let component: MineralFormInputComponent;
+  let fixture: ComponentFixture<MineralFormInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MineralListFooterComponent ]
+      declarations: [ MineralFormInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MineralListFooterComponent);
+    fixture = TestBed.createComponent(MineralFormInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

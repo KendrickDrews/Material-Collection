@@ -25,13 +25,13 @@ export class MineralDataService {
   }
 
   // DELETE /minerals/:id
-  deleteMineralById(mineralId: number): Observable<Mineral> {
-    return this.api.deleteMineralById(mineralId);
+  deleteMineralById(mineralID: Number): Observable<Mineral> {
+    return this.api.deleteMineralById(mineralID);
   }
 
   // PUT /minerals/:id
-  updateMineral(mineral: Mineral): Observable<Mineral> {
-    return this.api.updateMineral(mineral);
+  updateMineral(mineralID: Number): Observable<Mineral> {
+    return this.api.updateMineral(mineralID);
   }
 
   // GET /minerals
@@ -40,8 +40,8 @@ export class MineralDataService {
   }
 
   // GET /minerals/:id
-  getMineralById(mineralId: number): Observable<Mineral> {
-    return this.api.getMineralById(mineralId);
+  getMineralById(mineralID: Number): Observable<Mineral> {
+    return this.api.getMineralById(mineralID);
   }
 
 }

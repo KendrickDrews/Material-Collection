@@ -1,0 +1,7 @@
+.view{
+    display: flex;
+    align-content: space-between;
+}
+.view * {
+    width: 130px;
+}

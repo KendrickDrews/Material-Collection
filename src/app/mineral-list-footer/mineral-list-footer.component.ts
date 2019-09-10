@@ -9,7 +9,7 @@ import { Mineral } from '../mineral';
 export class MineralListFooterComponent {
 
   @Input()
-  minerals: Mineral[];
+   minerals: Mineral[];
 
   constructor() {
   }

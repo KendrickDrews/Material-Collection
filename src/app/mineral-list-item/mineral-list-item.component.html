@@ -1,5 +1,6 @@
 <div class="view">    
-  <p>{{mineral.type}}</p>
-    <p>{{mineral.collected_in}}</p> 
-      <p>{{mineral.weight_in_grams}}</p>        
+  <p>{{ mineral.type }}</p>
+  <p>{{ mineral.collected_in }}</p> 
+  <p>{{ mineral.weight_in_grams }}</p>   
+  <button class="destroy" (click)="removeMineral(mineral)"> Remove </button>     
 </div>

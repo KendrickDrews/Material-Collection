@@ -10,6 +10,7 @@ import { MineralListItemComponent } from './mineral-list-item/mineral-list-item.
 import { MineralListFooterComponent } from './mineral-list-footer/mineral-list-footer.component';
 import { MineralDataService } from './mineral-data.service';
 import { ApiService } from './api.service';
+import { MineralFormInputComponent } from './mineral-form-input/mineral-form-input.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,15 @@ import { ApiService } from './api.service';
     MineralListHeaderComponent,
     MineralListComponent,
     MineralListItemComponent,
-    MineralListFooterComponent
+    MineralListFooterComponent,
+    MineralFormInputComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [MineralDataService, ApiService],
   bootstrap: [AppComponent]

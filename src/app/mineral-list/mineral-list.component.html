@@ -2,7 +2,8 @@
     <ul class="mineral-list">
       <li *ngFor="let mineral of minerals">
         <app-mineral-list-item
-        [mineral]="mineral"        
+        [mineral]="mineral"  
+        (remove)="onRemoveMineral($event)"      
         ></app-mineral-list-item>
       </li>
     </ul>

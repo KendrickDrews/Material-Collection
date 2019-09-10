@@ -24,18 +24,7 @@ export class ApiService {
   constructor(
     private http: HttpClient
   ) {
-  }
-  
-  // API: GET /minerals
-  // public getAllMinerals(): Observable<Mineral[]> {
-  //   return this.http
-  //     .get(API_URL + _ROCK_COLLECTION, httpOptions)
-  //     .map(response => {
-  //       const minerals = response;     
-  //       return minerals.map(mineral => new Mineral(mineral));
-  //     })
-  //     .catch(this.handleError);
-  // }
+  } 
    // API: GET /minerals
    public getAllMinerals(): Observable<Mineral[]> {
     return this.http
@@ -58,9 +47,9 @@ export class ApiService {
   }
 
   // API: GET /minerals/:id
-  public getMineralById(mineralId: number): Observable<Mineral> {
+  public getMineralById(mineral: Number): Observable<Mineral> {
     return this.http
-      .get(API_URL + _ROCK_COLLECTION + mineralId + '/', httpOptions)
+      .get(API_URL + _ROCK_COLLECTION + mineral + '/', httpOptions)
       .map(response => {
         return new Mineral(response);
       })
@@ -68,9 +57,9 @@ export class ApiService {
   }
 
   // API: PUT /minerals/:id
-  public updateMineral(mineral: Mineral): Observable<Mineral> {
+  public updateMineral(mineral: Number): Observable<Mineral> {
     return this.http
-      .put(API_URL + _ROCK_COLLECTION + mineral.id, httpOptions)
+      .put(API_URL + _ROCK_COLLECTION + mineral + '/', httpOptions)
       .map(response => {
         return new Mineral(response);
       })
@@ -78,10 +67,18 @@ export class ApiService {
   }
 
   // DELETE /minerals/:id
-  public deleteMineralById(mineralId: number): Observable<null> {
+  public deleteMineralById(mineralID: Number): Observable<null> {
     return this.http
-      .delete(API_URL + _ROCK_COLLECTION + mineralId, httpOptions)
+      .delete(API_URL + _ROCK_COLLECTION + mineralID + '/', httpOptions)
       .map(response => null)
+      .catch(this.handleError);
+  }
+  // RESET Collection to initial /minerals/:id
+  public resetToCollectionDefinition(): Observable<any> {
+    return this.http
+      .post(API_URL + _ROCK_COLLECTION + '/reset/', httpOptions)
+      .map(response => {
+        return response })
       .catch(this.handleError);
   }
   private handleError (error: Response | any) {
