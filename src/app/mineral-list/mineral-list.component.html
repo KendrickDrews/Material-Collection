@@ -1,0 +1,9 @@
+<section class="main" *ngIf="minerals.length > 0">
+    <ul class="mineral-list">
+      <li *ngFor="let mineral of minerals">
+        <app-mineral-list-item
+        [mineral]="mineral"        
+        ></app-mineral-list-item>
+      </li>
+    </ul>
+  </section>
